@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #e2e2e2;
+    font-family: Montserrat;
+}
+
+header {
+    padding: 15px 20px;
+    background: #1f4f66;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.titulo-header {
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    max-width: 650px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.formularios {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-box, .box-mensagem {
+    background: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    padding: 0;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+.form-box {
+    width: calc( (100% - 15px) / 2);
+}
+
+.form-box img {
+    margin-top: 10px;
+}
+
+.titulo {
+    color: #0482bd;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0 30px;
+    font-size: 26px;
+    margin: 10px 0;
+}
+
+.subtitulo {
+    font-weight: 300;
+}
+
+
+.form-box form{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    max-width: 600px;
+}    
+
+input[type="text"] {
+    height: 40px;
+    outline: none;
+    font-size: 16px;
+    margin: 0 10px 10px; 
+    padding: 0 10px;
+    background-color: #e2e2e2;
+    border: none;
+    text-align: center;
+}
+
+input[type="submit"] {
+    background-color: #0482bd;
+    border: none;
+    height: 50px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 0;
+    
+    cursor: pointer;
+}
+.titulo-erro{
+    color: #f00;
+}
+
+@media (max-width: 700px) {
+    .form-box {
+        width: 100%;
+        margin: 0px 20px 10px;
+    }
+
+    .form-box form{
+        max-width: none;
+
+    }
+}
+
+@media (max-width: 425px) { 
+    .titulo-header {
+        font-size: 16px;
+    }
+
+    .titulo {
+        font-size: 18px;
+    }
+
+    input[type="text"]{
+        font-size: 14px;
+    }
+
+    .form-box {
+        margin: 0 10px 10px;
+    }
+
+}
