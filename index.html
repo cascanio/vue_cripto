@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicação Vue.js</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1 class="titulo-header">
+            Criptografando e descriptografando um texto
+        </h1>
+    </header>
+
+    <main id="main">
+        <section class="formularios">
+            <div class="form-box">
+                <img src="assets/imgs/locked-padlock.png">
+                <h2 class="titulo">Criptografar</h2>
+                <p class="subtitulo">Digite o texto para criptografar</p>
+
+                <form v-on:submit.prevent="criptografar">
+                    <!-- v-model associa os inputs às propriedades txtParaCripto -->
+                    <input type="text" v-model="txtParaCripto" placeholder="Digite o texto">
+                    
+                    <input type="submit" value="Criptografar">
+                </form>
+            </div>
+            
+            <div class="form-box">
+                <img src="assets/imgs/padlock.png">
+                <h2 class="titulo">Descriptografar</h2>
+                <p class="subtitulo">Digite o texto para descriptografar</p>
+                
+                <form v-on:submit.prevent="descriptografar">
+                    <!-- v-model associa os inputs às propriedades txtParaDescripto -->
+                    <input type="text" v-model="txtParaDescripto" placeholder="Digite o texto">
+
+                    <input type="submit" value="Descriptografar">
+                </form>
+            </div>
+        </section>
+
+        <section class="box-mensagem" v-if="resultadoTexto.length > 0">
+            <h4 class="subtitulo">{{ resultadoTitulo }}</h4>
+            <h3>{{ resultadoTexto }}</h3>
+
+        </section>
+
+        <section class=box-mensagem v-if="msgErro.length > 0">
+            <h3 class="titulo-erro">{{ msgErro }}</h3>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
